@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "img": "https://marvel-b1-cdn.bc0a.com/f00000000026007/resilienteducator.com/wp-content/uploads/2012/11/AdobeStock_60467600_cup.jpg",
-    "name": "Math",
+    "img": "https://csgoluck.s3.eu-central-1.amazonaws.com/69776912-b479-4b34-833a-cafb5e6bf4ff-Banners1138x640_Coinflip.jpeg",
+    "name": "Coinflip",
     "questions": [
       {
         "id": 1,
@@ -63,43 +63,13 @@
             "isCorrect": false
           }
         ]
-      },
-      {
-        "id": 3,
-        "text": "3 + 3 x 3 ÷ 3 - 3",
-        "options": [
-          {
-            "id": 1,
-            "label": "A",
-            "text": "3",
-            "isCorrect": true
-          },
-          {
-            "id": 2,
-            "label": "B",
-            "text": "1",
-            "isCorrect": false
-          },
-          {
-            "id": 3,
-            "label": "C",
-            "text": "9",
-            "isCorrect": false
-          },
-          {
-            "id": 4,
-            "label": "D",
-            "text": "16",
-            "isCorrect": false
-          }
-        ]
       }
     ]
   },
   {
     "id": 2,
-    "img": "https://blogs.biomedcentral.com/on-biology/wp-content/uploads/sites/5/2017/12/DNA.png",
-    "name": "Biology",
+    "img": "https://csgoluck.s3.eu-central-1.amazonaws.com/3987ecaf-d34e-449b-ad4b-cd2e5f73a18b-Banners1138x640_Slots.jpeg",
+    "name": "You vs. Bot",
     "questions": [
       {
         "id": 1,
@@ -195,8 +165,45 @@
   },
   {
     "id": 3,
-    "img": "http://jobs.newscientist.com/getasset/c40a5488-11be-43b0-843f-a2e6ef9f0612/",
-    "name": "Chemistry",
+    "img": "https://csgoluck.s3.eu-central-1.amazonaws.com/04bdf04f-f0db-47dd-a65d-e3f9e47d2b58-Banners1138x640_CaseBattle.jpeg",
+    "name": "Player vs. Player",
+    "questions": [
+      {
+        "id": 1,
+        "text": "What is the composition of table salt",
+        "options": [
+          {
+            "id": 1,
+            "label": "A",
+            "text": "NaCl",
+            "isCorrect": true
+          },
+          {
+            "id": 2,
+            "label": "B",
+            "text": "K2",
+            "isCorrect": false
+          },
+          {
+            "id": 3,
+            "label": "C",
+            "text": "NaCl2C4H7",
+            "isCorrect": false
+          },
+          {
+            "id": 4,
+            "label": "D",
+            "text": "CH4",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "img": "https://csgoluck.s3.eu-central-1.amazonaws.com/36874106-ef57-4500-9db4-081417fa3fe1-Banners1138x640_Roulette.jpeg",
+    "name": "Classic Game",
     "questions": [
       {
         "id": 1,
