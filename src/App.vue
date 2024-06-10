@@ -3,6 +3,49 @@
     <header>
       <h1>Simple Easy Skins</h1>
       <input v-model.trim="search" type="text" placeholder="Search..." />
+
+      <div class="walletBalanceCard">
+        <div class="svgwrapper">
+          <svg
+            viewBox="0 0 24 26"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect
+              x="0.539915"
+              y="6.28937"
+              width="21"
+              height="4"
+              rx="1.5"
+              transform="rotate(-4.77865 0.539915 6.28937)"
+              fill="#7D6B9D"
+              stroke="black"></rect>
+            <circle
+              cx="11.5"
+              cy="5.5"
+              r="4.5"
+              fill="#E7E037"
+              stroke="#F9FD50"
+              stroke-width="2"></circle>
+            <path
+              d="M2.12011 6.64507C7.75028 6.98651 12.7643 6.94947 21.935 6.58499C22.789 6.55105 23.5 7.23329 23.5 8.08585V24C23.5 24.8284 22.8284 25.5 22 25.5H2C1.17157 25.5 0.5 24.8284 0.5 24V8.15475C0.5 7.2846 1.24157 6.59179 2.12011 6.64507Z"
+              fill="#BF8AEB"
+              stroke="black"></path>
+            <path
+              d="M16 13.5H23.5V18.5H16C14.6193 18.5 13.5 17.3807 13.5 16C13.5 14.6193 14.6193 13.5 16 13.5Z"
+              fill="#BF8AEB"
+              stroke="black"></path>
+          </svg>
+        </div>
+
+        <div class="balancewrapper">
+          <span class="balanceHeading">Skins balance</span>
+          <p class="balance"><span id="currency">₹</span>890.12</p>
+        </div>
+
+        <button class="addmoney">
+          <span class="plussign">+</span>Inventory
+        </button>
+      </div>
       <button class="btn-steam">
         <i class="fa-brands fa-square-steam fa-xl" style="color: #ffffff"></i>
         <span>Sign In With Steam</span>
@@ -11,15 +54,7 @@
     <div class="wrapper">
       <h1>Games</h1>
       <div class="options-container">
-        <div v-for="quiz in quizes" :key="quiz.id" class="card">
-          <img :src="quiz.img" :alt="quiz.name" />
-          <div class="card-text">
-            <h2>{{ quiz.name }}</h2>
-            <p>
-              <span>{{ quiz.questions.length }}</span> Online
-            </p>
-          </div>
-        </div>
+        <Card v-for="quiz in quizes" :key="quiz.id" :quiz="quiz" />
       </div>
     </div>
   </div>
@@ -28,6 +63,7 @@
 <script setup>
 import q from "./data/quizes.json"; // Import of all the questions in the quiz json file
 import { ref, watch } from "vue";
+import Card from "./components/Card.vue";
 
 const quizes = ref(q); // Making state variable from the json file with the quizes
 const search = ref(""); // Empty search state
@@ -74,7 +110,7 @@ header input {
 }
 
 .btn-steam {
-  background-color: rgb(30, 47, 78);
+  background-color: #1e2f4e;
   color: white;
   border: none;
   border-radius: 5px;
@@ -87,39 +123,82 @@ header input {
   margin-left: 10px;
 }
 
+.btn-balance {
+  border-radius: 50px;
+  background: #1e2f4e;
+  box-shadow: inset 20px 20px 60px #1a2842, inset -20px -20px 60px #23365a;
+}
 .wrapper {
   margin-top: 50px;
   color: white;
 }
-/* ------------------> CARD STYLE */
-.card {
-  width: 310px;
-  overflow: hidden;
-  border-radius: 2%;
-  box-shadow: 1px 1px 10px rgb(0, 0, 0, 0.1);
-  margin-bottom: 35px;
-  margin-right: 20px;
-  cursor: pointer;
-  background-color: rgb(30, 47, 78);
-  color: white;
-}
 
-.card img {
+/* ------------- Balance section */
+.walletBalanceCard {
+  width: fit-content;
+  height: 55px;
+  background-color: #1e2f4e;
+  border-radius: 10px;
+  display: flex;
+  margin-left: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 0px 12px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.svgwrapper {
+  width: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.svgwrapper svg {
   width: 100%;
-  height: 190px;
-  margin: 0;
+}
+.balancewrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 120px;
+  gap: 0px;
+}
+.balanceHeading {
+  font-size: 8px;
+  color: rgb(214, 214, 214);
+  font-weight: 100;
+  letter-spacing: 0.6px;
+}
+.balance {
+  font-size: 13.5px;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-.card .card-text {
-  padding: 10px 10px;
+.addmoney {
+  padding: 1px 15px;
+  border-radius: 20px;
+  background-color: #6fc27d;
+  color: white;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
-
-.card .card-text h2 {
-  font-weight: bold;
+.addmoney:hover {
+  background-color: whitesmoke;
+  color: #6fc27d;
 }
-
-.card .card-text span {
-  color: rgb(6, 255, 6);
-  font-weight: bold;
+.plussign {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
