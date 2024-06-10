@@ -3,7 +3,10 @@
     <header>
       <h1>Simple Easy Skins</h1>
       <input v-model.trim="search" type="text" placeholder="Search..." />
-      <button class="btn-steam">Sign In With Steam</button>
+      <button class="btn-steam">
+        <i class="fa-brands fa-square-steam fa-xl" style="color: #ffffff"></i>
+        <span>Sign In With Steam</span>
+      </button>
     </header>
     <div class="wrapper">
       <h1>Games</h1>
@@ -76,9 +79,12 @@ header input {
   border: none;
   border-radius: 5px;
   margin-left: 20px;
-  padding: 10px;
+  padding: 12px;
   font-weight: bold;
   cursor: pointer;
+}
+.btn-steam span {
+  margin-left: 10px;
 }
 
 .wrapper {
